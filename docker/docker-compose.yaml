@@ -1,0 +1,12 @@
+version: "2"
+services:
+   led:
+    container_name: pinpoint-led
+    image: pp-led
+    environment:
+     - GATEWAY_API=http://172.21.34.104:9999/
+    ports:
+     - "8090:80"
+    volumes:
+     - ./nginx/templates:/etc/nginx/templates
+     - ./nginx/conf:/etc/nginx/conf.d
